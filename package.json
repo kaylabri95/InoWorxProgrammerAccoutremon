@@ -1,0 +1,41 @@
+{
+  "name": "InoWorx",
+  "version": "1.0.0",
+  "description": "A Revolutionary and Inituitive Approach to Programming",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-packager .",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish always"
+  },
+  "author": "KB",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^22.2.0",
+    "electron-builder": "^23.6.0"
+  },
+  "build": {
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ],
+      "icon": "build/icons/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "installerIcon": "build/icons/icon.ico",
+      "uninstallerIcon": "build/icons/icon.ico",
+      "installerHeader": "build/SplashSmall.png",
+      "license": "license.md",
+      "uninstallDisplayName": "InoWorxProgrammer-uninstaller",
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "InoWorxProgrammer"
+    }
+  }
+}
